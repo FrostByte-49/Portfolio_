@@ -1,0 +1,94 @@
+# ============================================
+# 📦 Node & Dependency Files
+# ============================================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+
+# ============================================
+# 🏗️ Build Output
+# ============================================
+dist/
+dist-ssr/
+build/
+out/
+
+
+# ============================================
+# ⚙️ Environment & Local Config
+# ============================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local
+
+
+# ============================================
+# 🧠 IDE & Editor Settings
+# ============================================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# ============================================
+# 🧹 System Files
+# ============================================
+.DS_Store
+Thumbs.db
+
+
+# ============================================
+# 🪵 Logs & Debug Files
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+
+# ============================================
+# 🧪 Testing / Coverage
+# ============================================
+coverage/
+*.lcov
+
+
+# ============================================
+# 🧰 Vite / Cache Files
+# ============================================
+.vite/
+vite.config.ts.timestamp-*
+vite.config.js.timestamp-*
+.cache/
+.temp/
+*.tsbuildinfo
+
+
+# ============================================
+# 🧑‍🎨 Tailwind / PostCSS / Build Tools
+# ============================================
+.postcssrc
+.tailwind.config.js.timestamp-*
+
+
+# ============================================
+# 📸 Misc 
+# ============================================
+*.pem
+*.crt
+*.key
+*.pid
+*.seed
