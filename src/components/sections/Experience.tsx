@@ -13,7 +13,7 @@ const experienceData = [
       'Reduced page load time by 40%',
       'Collaborated with a team of 8 developers',
     ],
-    certificate: 'https://drive.google.com/file/d/your-certificate-id-1/view', // Replace with actual link
+    certificate: 'https://drive.google.com/file/d/your-certificate-id-1/view', 
   },
   {
     role: 'Frontend Developer Intern',
@@ -26,7 +26,7 @@ const experienceData = [
       'Improved user engagement by 35%',
       'Implemented modern UI/UX patterns',
     ],
-    certificate: 'https://drive.google.com/file/d/your-certificate-id-2/view', // Replace with actual link
+    certificate: 'https://drive.google.com/file/d/your-certificate-id-2/view', 
   },
   {
     role: 'Backend Developer',
@@ -39,7 +39,7 @@ const experienceData = [
       'Improved API response time by 60%',
       'Implemented secure authentication system',
     ],
-    certificate: 'https://drive.google.com/file/d/your-certificate-id-3/view', // Replace with actual link
+    certificate: 'https://drive.google.com/file/d/your-certificate-id-3/view', 
   },
   {
     role: 'UI/UX Design Intern',
@@ -52,13 +52,13 @@ const experienceData = [
       'Conducted user testing with 50+ participants',
       'Improved conversion rates by 25%',
     ],
-    certificate: 'https://drive.google.com/file/d/your-certificate-id-4/view', // Replace with actual link
+    certificate: 'https://drive.google.com/file/d/your-certificate-id-4/view', 
   },
 ];
 
-export default function Experience() { // Changed from Education to Experience
+export default function Experience() { 
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null); // Added useState
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null); 
 
   useEffect(() => {
     const canvas = canvasRef.current;
