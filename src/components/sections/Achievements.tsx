@@ -1,4 +1,5 @@
-import { Award, Trophy, Star } from 'lucide-react';
+import { Award, Trophy, Star, Sparkles, FileText, ExternalLink } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 const achievementsData = [
   {
@@ -7,6 +8,7 @@ const achievementsData = [
     description: 'First place among 500+ participants for building an innovative AI solution',
     icon: Trophy,
     color: 'from-yellow-400 to-orange-500',
+    certificate: 'https://drive.google.com/file/d/hackathon-certificate/view',
   },
   {
     title: 'Google Cloud Certified',
@@ -14,6 +16,7 @@ const achievementsData = [
     description: 'Achieved certification in designing and managing cloud solutions',
     icon: Award,
     color: 'from-blue-400 to-cyan-500',
+    certificate: 'https://drive.google.com/file/d/google-cloud-certificate/view',
   },
   {
     title: 'Open Source Contributor',
@@ -21,6 +24,7 @@ const achievementsData = [
     description: 'Contributed to 20+ open source projects with 500+ stars',
     icon: Star,
     color: 'from-purple-400 to-pink-500',
+    certificate: 'https://drive.google.com/file/d/opensource-certificate/view',
   },
   {
     title: 'Best Project Award',
@@ -28,6 +32,7 @@ const achievementsData = [
     description: 'Recognized for outstanding final year project presentation',
     icon: Award,
     color: 'from-green-400 to-emerald-500',
+    certificate: 'https://drive.google.com/file/d/project-award-certificate/view',
   },
   {
     title: 'Coding Competition Winner',
@@ -35,6 +40,7 @@ const achievementsData = [
     description: 'Secured top position in monthly coding challenge',
     icon: Trophy,
     color: 'from-red-400 to-pink-500',
+    certificate: 'https://drive.google.com/file/d/coding-certificate/view',
   },
   {
     title: 'AWS Certified Developer',
@@ -42,58 +48,229 @@ const achievementsData = [
     description: 'Professional certification in AWS cloud development',
     icon: Award,
     color: 'from-orange-400 to-amber-500',
+    certificate: 'https://drive.google.com/file/d/aws-certificate/view',
   },
 ];
 
 export default function Achievements() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const setCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    setCanvasSize();
+
+    const particles = Array.from({ length: 25 }).map(() => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 2 + 1,
+      speedX: (Math.random() - 0.5) * 0.3,
+      speedY: (Math.random() - 0.5) * 0.3,
+      opacity: Math.random() * 0.2 + 0.1,
+    }));
+
+    let animationId: number;
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p) => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        
+        const isDark = document.documentElement.classList.contains('dark');
+        ctx.fillStyle = isDark 
+          ? `rgba(200, 150, 255, ${p.opacity})`
+          : `rgba(255, 182, 193, ${p.opacity})`;
+        
+        ctx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < -10 || p.x > canvas.width + 10 || p.y < -10 || p.y > canvas.height + 10) {
+          p.x = Math.random() * canvas.width;
+          p.y = Math.random() * canvas.height;
+        }
+      });
+
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animate();
+    window.addEventListener('resize', setCanvasSize);
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener('resize', setCanvasSize);
+    };
+  }, []);
+
+  const openCertificate = (certificateUrl: string) => {
+    setSelectedCertificate(certificateUrl);
+  };
+
+  const closeCertificate = () => {
+    setSelectedCertificate(null);
+  };
+
   return (
-    <section
-      id="achievements"
-      className="min-h-screen flex items-center justify-center px-6 py-20"
-    >
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Achievements
-          </h2>
-          <div className="h-1 w-24 mx-auto bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
+    <>
+      <section
+        id="achievements"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden px-6 py-20 transition-colors duration-500
+                   bg-gradient-to-br from-pink-50/80 via-white/80 to-purple-50/80 
+                   dark:from-[#0a0f1f]/80 dark:via-[#1a1440]/80 dark:to-[#2b1e5a]/80"
+      >
+        {/* Background Particles */}
+        <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
+
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-10 w-16 h-16 bg-pink-200/30 dark:bg-purple-500/20 rounded-full blur-xl animate-float" />
+          <div className="absolute bottom-40 left-10 w-20 h-20 bg-purple-200/30 dark:bg-pink-500/20 rounded-full blur-xl animate-float animation-delay-1000" />
+          <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-blue-200/20 dark:bg-blue-500/15 rounded-full blur-xl animate-float animation-delay-2000" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {achievementsData.map((achievement, index) => {
-            const Icon = achievement.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white/40 dark:bg-black/40 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 dark:border-white/10 hover:scale-105 transition-all duration-300 group relative overflow-hidden animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="max-w-6xl mx-auto w-full relative z-10">
+          {/* Header */}
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-full border border-pink-200 dark:border-purple-700 shadow-lg mb-5">
+              <Sparkles className="w-4 h-4 text-pink-500 dark:text-purple-400" />
+              <span className="text-sm font-medium text-pink-600 dark:text-purple-300 tracking-wide">
+                実績 • My Achievements
+              </span>
+            </div>
+            
+            <h2 className="text-6xl font-bold mb-6 animate-glow">
+              <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                Achievements
+              </span>
+            </h2>
+            
+            <div className="flex justify-center items-center gap-4 mb-6">
+              <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+              <span className="text-lg text-pink-500 dark:text-purple-300 font-light">🏆</span>
+              <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
+            </div>
+          </div>
 
-                <div className="relative z-10">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${achievement.color} shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-8 h-8 text-white" />
+          {/* Achievements Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {achievementsData.map((achievement, index) => {
+              const Icon = achievement.icon;
+              return (
+                <div
+                  key={index}
+                  className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-2xl rounded-3xl p-6 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 hover:shadow-3xl transition-all duration-500 animate-slide-up overflow-hidden"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${achievement.color} shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+              
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                      {achievement.title}
+                    </h3>
+              
+                    {/* Event */}
+                    <p className="text-pink-600 dark:text-pink-400 font-semibold mb-3 text-sm">
+                      {achievement.event}
+                    </p>
+              
+                    {/* Description */}
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                      {achievement.description}
+                    </p>
+              
+                    {/* Certificate Button */}
+                    <button
+                      onClick={() => openCertificate(achievement.certificate)}
+                      className="group/certificate flex items-center gap-2 w-full px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
+                    >
+                      <FileText className="w-4 h-4 group-hover/certificate:scale-110 transition-transform duration-300" />
+                      <span className="flex-1 text-center">View Certificate</span>
+                      <ExternalLink className="w-3 h-3 opacity-0 group-hover/certificate:opacity-100 group-hover/certificate:translate-x-1 transition-all duration-300" />
+                    </button>
                   </div>
-
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                    {achievement.title}
-                  </h3>
-
-                  <p className="text-purple-600 dark:text-purple-400 font-semibold mb-3 text-sm">
-                    {achievement.event}
-                  </p>
-
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    {achievement.description}
-                  </p>
+              
+                  {/* Bottom Glow Effect */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+          
+          {/* Footer Text */}
+          <div className="text-center mt-16 animate-fade-in animation-delay-600">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-full border border-pink-200/50 dark:border-purple-700/50">
+              <Star className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
+              <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                Celebrating milestones and continuous growth
+              </p>
+              <Star className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Certificate Modal */}
+      {selectedCertificate && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/80 backdrop-blur-lg animate-fade-in">
+          <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[105vh] overflow-hidden">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                Certificate
+              </h3>
+              <button
+                onClick={closeCertificate}
+                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors duration-200"
+              >
+                <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Certificate Content */}
+            <div className="p-6">
+              <div className="w-full h-[70vh] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center">
+                <iframe
+                  src={selectedCertificate.replace('/view', '/preview')}
+                  className="w-full h-full rounded-xl border-0"
+                  title="Certificate"
+                  allowFullScreen
+                />
+              </div>
+              
+              {/* Download Button */}
+              <div className="flex justify-center mt-6">
+                <a
+                  href={selectedCertificate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <FileText className="w-5 h-5" />
+                  <span>Download Certificate</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
