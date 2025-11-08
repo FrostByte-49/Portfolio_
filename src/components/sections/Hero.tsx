@@ -86,13 +86,13 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 transition-colors duration-500
+      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 pt-24 pb-36 transition-colors duration-500
              bg-gradient-to-br from-pink-100 via-white to-purple-100 
              dark:from-[#0a0f1f] dark:via-[#1a1440] dark:to-[#2b1e5a]"
       >
         
       {/* Sakura Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
+      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" /> 
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-5xl mx-auto">
@@ -116,6 +116,13 @@ export default function Hero() {
           </p>
         </div>
 
+        {/* Line Animation */}
+        <div className="flex justify-center items-center gap-4 mb-6">
+            <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+            <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✦</span>
+            <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
+        </div>
+        
         {/* Tagline */}
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-6 leading-relaxed animate-slide-up">
           Building immersive, modern, and meaningful digital experiences 
@@ -147,7 +154,7 @@ export default function Hero() {
         </div>
 
         {/* Socials */}
-        <div className="flex justify-center gap-6 mt-12 animate-fade-in animation-delay-400">
+        <div className="flex justify-center gap-6 mt-10 animate-fade-in animation-delay-400">
           {[
             { icon: Github, href: '#', label: 'GitHub' },
             { icon: Linkedin, href: '#', label: 'LinkedIn' },
@@ -166,7 +173,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 transform -translate-x-1/2 pb-6 animate-bounce">
         <button
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           className="group p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-pink-200/50 dark:border-purple-700/50 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"

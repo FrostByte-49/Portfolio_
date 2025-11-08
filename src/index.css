@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  zoom: 80%;
 }
 
 @layer utilities {
