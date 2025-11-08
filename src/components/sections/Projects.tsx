@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Github, X } from 'lucide-react';
+import { Sparkles, ExternalLink, Github, X } from 'lucide-react';
 
 const projectsData = [
   {
@@ -41,20 +41,37 @@ const projectsData = [
 ];
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<number | null>(null); 
 
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center px-6 py-20"
+      className="min-h-screen flex items-center justify-center px-6 py-20 transition-colors duration-500
+             bg-gradient-to-br from-pink-100 via-white to-purple-100 
+             dark:from-[#0a0f1f] dark:via-[#1a1440] dark:to-[#2b1e5a]"
     >
+
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Projects
-          </h2>
-          <div className="h-1 w-24 mx-auto bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
+        <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-full border border-pink-200 dark:border-purple-700 shadow-lg mb-5">
+          <Sparkles className="w-4 h-4 text-pink-500 dark:text-purple-400" />
+          <span className="text-sm font-medium text-pink-600 dark:text-purple-300 tracking-wide">
+            プロジェクト • My Creations
+          </span>
         </div>
+        
+        <h2 className="text-6xl font-bold mb-6 animate-glow">
+          <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+            Projects
+          </span>
+        </h2>
+        
+        <div className="flex justify-center items-center gap-4 mb-6">
+          <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+          <span className="text-lg text-pink-500 dark:text-purple-300 font-light">🚀</span>
+          <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
+        </div>
+      </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {projectsData.map((project, index) => (

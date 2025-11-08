@@ -13,7 +13,7 @@ const experienceData = [
       'Reduced page load time by 40%',
       'Collaborated with a team of 8 developers',
     ],
-    certificate: 'https://drive.google.com/file/d/your-certificate-id-1/view', 
+    certificate: 'https://drive.google.com/file/d/1BAFwjevn24EeCUL62dD442BNj_DRysS8/view?usp=sharing', 
   },
   {
     role: 'Frontend Developer Intern',
@@ -175,10 +175,8 @@ export default function Experience() {
               </span>
             </div>
             
-            <h2 className="text-6xl font-bold mb-6 animate-glow">
-              <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-extrabold bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,182,193,0.4)] uppercase">
                 Experience
-              </span>
             </h2>
             
             <div className="flex justify-center items-center gap-4 mb-6">
@@ -288,7 +286,7 @@ export default function Experience() {
       {/* Certificate Modal */}
       {selectedCertificate && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-lg z-50 flex items-center justify-center p-6">
-          <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+          <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[105vh] overflow-hidden">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
@@ -306,7 +304,7 @@ export default function Experience() {
 
             {/* Certificate Content */}
             <div className="p-6">
-              <div className="w-full h-[60vh] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center">
+              <div className="w-full h-[70vh] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center">
                 <iframe
                   src={selectedCertificate.replace('/view', '/preview')}
                   className="w-full h-full rounded-xl border-0"

@@ -93,18 +93,24 @@ export default function About() {
 
       {/* Heading */}
       <div className="relative z-10 text-center mt-16 mb-10 md:mb-12 animate-fade-in">
-        <div className="flex items-center justify-center gap-3 mb-2">
-          {/*<Sparkles className="w-6 h-6 text-pink-400 animate-pulse" />*/}
-          <h2 className="text-5xl font-extrabold bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,182,193,0.4)] uppercase">
+        <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-full border border-pink-200 dark:border-purple-700 shadow-lg mb-5">
+          <Sparkles className="w-4 h-4 text-pink-500 dark:text-purple-400" />
+          <span className="text-sm font-medium text-pink-600 dark:text-purple-300 tracking-wide">
+            私について • Get to Know Me
+          </span>
+        </div>
+
+        <h2 className="text-6xl font-bold mb-6 animate-glow">
+          <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
             About Me
-          </h2>
-          {/*<Sparkles className="w-6 h-6 text-pink-400 animate-pulse" />*/}
-       </div>
+          </span>
+        </h2>
+
         {/* Line Animation */}
-        <div className="flex justify-center items-center gap-4 mb-0 mt-4">
-            <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
-            <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✦</span>
-            <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
+        <div className="flex justify-center items-center gap-4 mb-6">
+          <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+          <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✨</span>
+          <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
         </div>
       </div>
 

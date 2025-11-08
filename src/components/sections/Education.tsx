@@ -127,10 +127,8 @@ export default function Education() {
             </span>
           </div>
           
-          <h2 className="text-6xl font-bold mb-6 animate-glow">
-            <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-extrabold bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent drop- [0_0_10px_rgba(255,182,193,0.4)] uppercase">
               Education
-            </span>
           </h2>
           
           <div className="flex justify-center items-center gap-4 mb-6">
