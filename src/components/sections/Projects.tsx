@@ -59,13 +59,13 @@ export default function Projects() {
             プロジェクト • My Creations
           </span>
         </div>
-        
+
         <h2 className="text-6xl font-bold mb-6 animate-glow">
           <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
             Projects
           </span>
         </h2>
-        
+
         <div className="flex justify-center items-center gap-4 mb-6">
           <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
           <span className="text-lg text-pink-500 dark:text-purple-300 font-light">🚀</span>
@@ -116,7 +116,7 @@ export default function Projects() {
 
         {selectedProject !== null && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm animate-fade-in">
-            <div className="bg-white/95 dark:bg-black/95 backdrop-blur-xl rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-white/20 dark:border-white/10 animate-scale-in">
+            <div className="bg-white/95 dark:bg-black/95 backdrop-blur-xl rounded-3xl max-w-3xl w-full max-h-[100vh] overflow-y-auto shadow-2xl border border-white/20 dark:border-white/10 animate-scale-in">
               <div className="relative">
                 <img
                   src={projectsData[selectedProject].image}
@@ -125,9 +125,9 @@ export default function Projects() {
                 />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-lg rounded-full hover:bg-white/30 transition-colors"
+                  className="fixed top-4 right-4 z-50 p-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg rounded-full shadow-2xl border border-white/30 dark:border-white/10 hover:scale-110 hover:bg-white hover:dark:bg-gray-700 transition-all duration-300 group"
                 >
-                  <X className="w-6 h-6 text-white" />
+                  <X className="w-4 h-4 text-gray-700 dark:text-gray-300 group-hover:text-red-500 transition-colors duration-300" />
                 </button>
               </div>
 
