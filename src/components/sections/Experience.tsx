@@ -26,7 +26,7 @@ const experienceData = [
       'Improved user engagement by 35%',
       'Implemented modern UI/UX patterns',
     ],
-    certificate: 'https://drive.google.com/file/d/your-certificate-id-2/view', 
+    certificate: 'https://drive.google.com/file/d/1RjmAxq-nmO3pv5S3aBETnLXar_z8OzfD/view?usp=sharing', 
   },
   {
     role: 'Backend Developer',
