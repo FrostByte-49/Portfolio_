@@ -211,12 +211,6 @@ export default function Experience() {
                   <div className="ml-32">
                     <div className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-2xl rounded-3xl p-8 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 hover:shadow-3xl transition-all duration-500 overflow-hidden">
                       
-                      {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      
-                      {/* Animated Border */}
-                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-500" />
-
                       <div className="relative z-10">
                         {/* Role & Company */}
                         <div className="mb-6">
