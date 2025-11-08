@@ -13,11 +13,11 @@ export default function About() {
 
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = window.innerHeight * 2;
     };
     setCanvasSize();
 
-    const petals = Array.from({ length: 60 }).map(() => ({
+    const petals = Array.from({ length: 80 }).map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       size: Math.random() * 8 + 4,

@@ -10,14 +10,14 @@ export default function Hero() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // --- Canvas setup ---
+    // Canvas Setup
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = window.innerHeight * 1.3;
     };
     setCanvasSize();
 
-    // --- Sakura petals configuration ---
+    // Sakura Petals Configuration 
     const petals = Array.from({ length: 60 }).map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -44,7 +44,7 @@ export default function Hero() {
       gradient.addColorStop(1, 'rgba(255, 182, 193, 0.3)');
       ctx.fillStyle = gradient;
 
-      // Sakura shape (heart-like petal)
+      // Sakura Shape (Heart-Like Petal)
       ctx.beginPath();
       ctx.moveTo(0, 0);
       ctx.bezierCurveTo(p.size / 2, -p.size / 2, p.size, p.size / 3, 0, p.size);

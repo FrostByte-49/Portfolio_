@@ -27,46 +27,66 @@ export default function Education() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Canvas setup
+    // Canvas Setup 
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = window.innerHeight * 2.2;
     };
     setCanvasSize();
 
-    // Floating particles configuration
-    const particles = Array.from({ length: 30 }).map(() => ({
+    // Sakura Petals Configuration
+    const petals = Array.from({ length: 80 }).map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 3 + 1,
-      speedX: (Math.random() - 0.5) * 0.2,
-      speedY: (Math.random() - 0.5) * 0.2,
-      opacity: Math.random() * 0.3 + 0.1,
+      size: Math.random() * 8 + 4,
+      speedX: (Math.random() - 0.5) * 0.5,
+      speedY: Math.random() * 1 + 0.7,
+      rotation: Math.random() * Math.PI * 2,
+      rotationSpeed: (Math.random() - 0.5) * 0.02,
+      swing: Math.random() * Math.PI * 2,
+      amplitude: Math.random() * 1.5 + 0.5,
+      frequency: Math.random() * 0.01 + 0.005,
+      opacity: Math.random() * 0.5 + 0.5,
     }));
+
+    const drawPetal = (p: any) => {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.globalAlpha = p.opacity;
+
+      const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, p.size);
+      gradient.addColorStop(0, 'rgba(255, 240, 245, 1)');
+      gradient.addColorStop(0.6, 'rgba(255, 182, 193, 0.8)');
+      gradient.addColorStop(1, 'rgba(255, 182, 193, 0.3)');
+      ctx.fillStyle = gradient;
+
+      // Sakura Shape (Heart-Like Petal)
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.bezierCurveTo(p.size / 2, -p.size / 2, p.size, p.size / 3, 0, p.size);
+      ctx.bezierCurveTo(-p.size, p.size / 3, -p.size / 2, -p.size / 2, 0, 0);
+      ctx.fill();
+
+      ctx.restore();
+    };
 
     let animationId: number;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach((p) => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        
-        const isDark = document.documentElement.classList.contains('dark');
-        ctx.fillStyle = isDark 
-          ? `rgba(200, 150, 255, ${p.opacity})`
-          : `rgba(255, 182, 193, ${p.opacity})`;
-        
-        ctx.fill();
-
-        p.x += p.speedX;
+      petals.forEach((p) => {
+        p.x += p.speedX + Math.sin(p.swing) * p.amplitude;
         p.y += p.speedY;
+        p.rotation += p.rotationSpeed;
+        p.swing += p.frequency;
 
-        // Reset particles when they go off screen
-        if (p.x < -10 || p.x > canvas.width + 10 || p.y < -10 || p.y > canvas.height + 10) {
+        if (p.y > canvas.height + 20) {
+          p.y = -20;
           p.x = Math.random() * canvas.width;
-          p.y = Math.random() * canvas.height;
         }
+
+        drawPetal(p);
       });
 
       animationId = requestAnimationFrame(animate);
@@ -78,14 +98,14 @@ export default function Education() {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', setCanvasSize);
     };
-  }, []);
+  }, []); 
 
   return (
     <section
       id="education"
       className="min-h-screen flex items-center justify-center relative overflow-hidden px-6 pt-20 pb-40 transition-colors duration-500
-                 bg-gradient-to-br from-pink-50 via-white to-purple-50 
-                 dark:from-[#0a0f1f] dark:via-[#1a1440] dark:to-[#2b1e5a]"
+                 bg-gradient-to-br from-pink-100 via-white to-purple-100 
+             dark:from-[#0a0f1f] dark:via-[#1a1440] dark:to-[#2b1e5a]"
     >
       {/* Background Particles */}
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
@@ -134,7 +154,7 @@ export default function Education() {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 {/* Timeline Node */}
-                <div className="absolute left-2 top-32 w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center shadow-2xl shadow-purple-500/50 z-20 animate-pulse">
+                <div className="absolute left-2 top-32 w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center shadow-2xl shadow-purple-500/50 z-20">
                   <GraduationCap className="w-4 h-4 text-white" />
                 </div>
 
