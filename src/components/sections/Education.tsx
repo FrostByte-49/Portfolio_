@@ -3,19 +3,25 @@ import { useEffect, useRef } from 'react';
 
 const educationData = [
   {
-    degree: 'Bachelor of Technology in Computer Science',
-    institution: 'Your University',
-    period: '2020 - 2024',
-    description: 'Specialized in Software Engineering and Web Technologies',
-    achievements: ['CGPA: 8.5/10', 'Dean\'s List', 'Best Project Award'],
+    degree: 'Bachelor of Engineering in Computer Engineering',
+    institution: 'University of Mumbai',
+    period: '2024 - 2028',
+    description:'Pursuing a Bachelor of Engineering in Computer Engineering from the University of Mumbai, with a focus on software development, web technologies, and problem-solving. I’m deeply passionate about creating user-centric digital experiences that blend design and logic. Throughout my academic journey, I’ve worked on impactful projects, explored modern frameworks, and continuously evolved my skills through hackathons, open-source contributions, and hands-on experimentation.',
+    achievements: ['CGPA: 8.8/10', 'Best Project Award'],
   },
+
   {
     degree: 'Higher Secondary Education',
-    institution: 'Your College',
-    period: '2018 - 2020',
-    description: 'Science Stream with Computer Science',
-    achievements: ['95%', 'School Topper in Computer Science'],
+    institution: 'Arihant Arts, Commerce & Science Junior College, Bavdhan',
+    period: '2022 - 2024',
+    description:
+      'Completed higher secondary education in the Science stream with a specialization in Computer Science. Built a strong foundation in analytical thinking, programming, and core scientific concepts, laying the groundwork for my journey into engineering and technology.',
+    achievements: [
+      'Secured 93% in 11th Grade',
+      'Achieved 2nd Rank Overall in 11th Grade',
+    ],
   },
+  
 ];
 
 export default function Education() {
