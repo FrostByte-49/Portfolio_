@@ -7,7 +7,7 @@ import {
   Code2,
   Award,
   Image,
-  MessageSquare,
+  // MessageSquare,
   Mail,
 } from "lucide-react";
 
@@ -24,7 +24,7 @@ const navItems = [
   { id: "skills", label: "Skills", icon: Code2 },
   { id: "achievements", label: "Achievements", icon: Award },
   { id: "gallery", label: "Gallery", icon: Image },
-  { id: "testimonials", label: "Testimonials", icon: MessageSquare },
+  // { id: "testimonials", label: "Testimonials", icon: MessageSquare },
   { id: "contact", label: "Contact", icon: Mail },
 ];
 
@@ -49,7 +49,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
         <h2 className="relative text-3xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent tracking-wide drop-shadow-sm">
           PK Portfolio
         </h2>
-        <div className="mt-2 h-[2px] w-16 mx-auto bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+        <div className="mt-2 mb-2 h-[2px] w-16 mx-auto bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
       </div>
 
       {/* Navigation */}
@@ -91,9 +91,9 @@ export default function Sidebar({ activeSection }: SidebarProps) {
       </nav>
 
       {/* Footer Section */}
-      <div className="py-6 text-center text-xs text-gray-600 dark:text-gray-400 border-t border-white/10">
+      <div className="py-6 text-center text-s text-gray-600 dark:text-gray-400 border-t border-white/10">
         <p>© 2025 Pranav Khalate</p>
-        <p className="text-[0.75rem] text-pink-400 mt-1 tracking-wide">
+        <p className="text-[1rem] text-pink-400 mt-1 tracking-wide">
           Crafted with 💖 & React
         </p>
       </div>

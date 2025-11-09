@@ -9,7 +9,7 @@ import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Achievements from './components/sections/Achievements';
 import Gallery from './components/sections/Gallery';
-import Testimonials from './components/sections/Testimonials';
+// import Testimonials from './components/sections/Testimonials';
 import Contact from './components/sections/Contact';
 import ParticleBackground from './components/ParticleBackground';
 
@@ -85,7 +85,7 @@ function App() {
         <Skills />
         <Achievements />
         <Gallery />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Contact />
       </main>
     </div>
