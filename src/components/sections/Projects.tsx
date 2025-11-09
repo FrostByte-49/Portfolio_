@@ -40,7 +40,7 @@ const projectsData = [
     tech: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Lucide React'],
     image: 'https://res.cloudinary.com/dhn92qb61/image/upload/v1762707726/Screenshot_2025-11-09_222709_ykpr3m.png',
     github: 'https://github.com/FrostByte-49/Portfolio_',
-    demo: '#',
+    demo: 'https://pranavkhalate.netlify.app/',
   },
 
 ];
