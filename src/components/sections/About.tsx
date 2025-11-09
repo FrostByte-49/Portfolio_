@@ -131,18 +131,21 @@ export default function About() {
         <div className="flex-1 text-gray-800 dark:text-gray-200 space-y-4">
           <p className="leading-relaxed">
             Hello! I'm <span className="font-semibold text-pink-600 dark:text-pink-400">Pranav Khalate</span>, 
-            a passionate developer who loves crafting immersive digital experiences.  
-            I combine creativity and technology to bring innovative ideas to life.
+            a Computer Engineering student at the <span className="font-semibold">University of Mumbai</span> (Class of ’28) 
+            and an aspiring full-stack developer passionate about building meaningful digital experiences.  
+            I love transforming ideas into interactive, user-centric applications that combine performance, design, and functionality.
           </p>
 
           <p className="leading-relaxed">
-            My journey revolves around curiosity and constant learning — from designing visually appealing interfaces 
-            to engineering seamless backend systems. Each project is an opportunity to blend art and logic.
+            My journey began with a deep curiosity for how technology works, which soon evolved into a passion for coding and problem-solving.  
+            Over time, I’ve created impactful projects like the <span className="font-semibold">Zener Diode Simulator (ZenerSim)</span> used by 600+ learners, 
+            the minimalist wellness tracker <span className="font-semibold">MindEaze</span>, and the AI-powered health companion <span className="font-semibold">SymptoWise</span>.
           </p>
 
           <p className="leading-relaxed">
-            Outside the tech world, I dive into anime for inspiration, explore emerging tools, 
-            and contribute to open-source communities that empower innovation.
+            I actively participate in <span className="font-semibold">Hackathons</span> and <span className="font-semibold">Open-Source Programs</span> where collaboration fuels creativity and growth.  
+            Beyond coding, I draw inspiration from <span className="font-semibold">anime</span>, explore emerging technologies, 
+            and constantly seek new ways to turn imagination into innovation.
           </p>
 
           <div className="pt-4 border-t border-gray-300 dark:border-gray-700">
@@ -150,19 +153,20 @@ export default function About() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-pink-500 mt-1">✦</span>
-                <span>Develop meaningful, user-focused solutions that create impact</span>
+                <span>Build real-world, accessible applications that make a positive impact</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-pink-500 mt-1">✦</span>
-                <span>Keep mastering new technologies and pushing creative boundaries</span>
+                <span>Continue mastering full-stack development, AI, and emerging technologies</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-pink-500 mt-1">✦</span>
-                <span>Collaborate with great minds to build exceptional experiences</span>
+                <span>Collaborate with diverse minds through open-source, hackathons, and innovation-driven communities</span>
               </li>
             </ul>
           </div>
         </div>
+
       </div>
     </section>
   );
