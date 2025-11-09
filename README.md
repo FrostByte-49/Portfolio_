@@ -106,6 +106,9 @@ From interactive sections and smooth animations to dark mode and accessibility, 
 │   │   ├── ParticleBackground.tsx       # Animated Background
 │   │   └── Sidebar.tsx                  # Mobile Navigation
 │   │
+│   ├── 📁 lib/
+│   │   └── ga.ts                        # Google Analytics
+│   │
 │   ├── App.tsx                          # Main App Component
 │   ├── index.css                        # Global Styles
 │   ├── main.tsx                         # App Entry Point
