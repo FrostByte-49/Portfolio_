@@ -210,7 +210,7 @@ export default function Experience() {
 
                   {/* Experience Card */}
                   <div className="ml-32">
-                    <div className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-2xl rounded-3xl p-8 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 hover:shadow-3xl transition-all duration-500 overflow-hidden">
+                    <div className="group relative bg-white/60 dark:bg-gray-800/60 rounded-3xl p-8 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 hover:shadow-3xl transition-all duration-500 overflow-hidden">
                       
                       <div className="relative z-10">
                         {/* Role & Company */}

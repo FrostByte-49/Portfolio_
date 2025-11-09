@@ -61,7 +61,7 @@ export default function Projects() {
         </div>
 
         <h2 className="text-5xl font-extrabold bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent drop- [0_0_10px_rgba(255,182,193,0.4)] uppercase">
-              Projects
+          Projects
         </h2>
 
         {/* Line Animation */}
@@ -76,7 +76,7 @@ export default function Projects() {
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className="group bg-white/40 dark:bg-black/40 backdrop-blur-xl rounded-3xl overflow-hidden shadow-xl border border-white/20 dark:border-white/10 hover:scale-105 transition-all duration-300 cursor-pointer animate-slide-up"
+              className="group bg-white/40 dark:bg-black/40 rounded-3xl overflow-hidden shadow-xl border border-white/20 dark:border-white/10 hover:scale-105 transition-all duration-300 cursor-pointer animate-slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => setSelectedProject(index)}
             >

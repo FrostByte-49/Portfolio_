@@ -113,7 +113,7 @@ export default function About() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 bg-white/40 dark:bg-black/40 backdrop-blur-xl 
+      <div className="relative z-10 bg-white/40 dark:bg-black/40 
                       rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 
                       overflow-hidden flex flex-col md:flex-row items-center max-w-5xl w-[90%] 
                       p-6 md:p-10 gap-10 transition-transform duration-500 hover:scale-[1.02]">

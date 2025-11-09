@@ -190,7 +190,7 @@ export default function Achievements() { // Changed from Hero to Achievements
               return (
                 <div
                   key={index}
-                  className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-2xl rounded-3xl p-6 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 hover:shadow-3xl transition-all duration-500 animate-slide-up overflow-hidden"
+                  className="group relative bg-white/60 dark:bg-gray-800/60 rounded-3xl p-6 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 hover:shadow-3xl transition-all duration-500 animate-slide-up overflow-hidden"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
 

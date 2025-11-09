@@ -158,7 +158,7 @@ export default function Skills() {
           {Object.entries(skillsData).map(([category, skills], catIndex) => (
             <div
               key={category}
-              className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-2xl rounded-3xl p-6 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 hover:shadow-3xl transition-all duration-500 animate-slide-up overflow-hidden"
+              className="group relative bg-white/60 dark:bg-gray-800/60 rounded-3xl p-6 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 hover:shadow-3xl transition-all duration-500 animate-slide-up overflow-hidden"
               style={{ animationDelay: `${catIndex * 200}ms` }}
             >
               {/* Gradient Overlay */}
