@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, Maximize2 } from 'lucide-react';
+import { X, Maximize2, Sparkles } from 'lucide-react';
 
 const galleryImages = [
   {
@@ -40,17 +40,32 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="min-h-screen flex items-center justify-center px-6 py-20"
+      className="min-h-screen flex items-center justify-center px-6 py-20 transition-colors duration-500
+                 bg-gradient-to-br from-pink-100 via-white to-purple-100 
+                 dark:from-[#0a0f1f] dark:via-[#1a1440] dark:to-[#2b1e5a]"
     >
+      
+      {/* Header */}
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Gallery
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-full border border-pink-200 dark:border-purple-700 shadow-lg mb-5">
+            <Sparkles className="w-4 h-4 text-pink-500 dark:text-purple-400" />
+            <span className="text-sm font-medium text-pink-600 dark:text-purple-300 tracking-wide">
+              ギャラリー • Visual Journey
+            </span>
+          </div>
+          
+          <h2 className="text-6xl font-bold mb-6 animate-glow">
+            <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+              Gallery
+            </span>
           </h2>
-          <div className="h-1 w-24 mx-auto bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
-          <p className="mt-4 text-gray-600 dark:text-gray-400">
-            Moments from my creative journey
-          </p>
+          
+          <div className="flex justify-center items-center gap-4 mb-6">
+            <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+            <span className="text-lg text-pink-500 dark:text-purple-300 font-light">📸</span>
+            <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -97,19 +112,28 @@ export default function Gallery() {
               <img
                 src={galleryImages[selectedImage].url}
                 alt={galleryImages[selectedImage].title}
-                className="w-full h-auto rounded-3xl shadow-2xl"
+                className="w-full h-auto max-h-[100vh] rounded-3xl shadow-2xl"
               />
               <div className="mt-6 text-center">
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {galleryImages[selectedImage].title}
                 </h3>
-                <span className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full text-white text-sm font-medium">
-                  {galleryImages[selectedImage].category}
-                </span>
               </div>
             </div>
           </div>
         )}
+
+        {/* Footer Text */}
+        <div className="text-center mt-16 animate-fade-in animation-delay-600">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-full border border-pink-200/50 dark:border-purple-700/50">
+            <Sparkles className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
+            <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
+              Every picture tells a story of innovation and creativity
+            </p>
+            <Sparkles className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
+          </div>
+        </div>
+
       </div>
     </section>
   );
