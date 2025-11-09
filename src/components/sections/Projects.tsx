@@ -3,41 +3,46 @@ import { Sparkles, ExternalLink, Github, X } from 'lucide-react';
 
 const projectsData = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with payment integration',
-    longDescription: 'Built a comprehensive e-commerce platform featuring user authentication, product management, shopping cart functionality, and secure payment processing using Stripe. Implemented real-time inventory tracking and order management.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
-    github: '#',
-    demo: '#',
+    title: 'Zener Diode Virtual Lab',
+    description: 'An interactive platform to simulate and visualize Zener Diode behavior in real time.',
+    longDescription: `ZenerSim is a web-based virtual lab that brings Zener Diode concepts to life through drag-and-drop circuit design, real-time calculations, and dynamic graph visualizations. Used by 600+ learners, it helps students understand voltage-current relationships interactively. The platform also includes a Dialogflow chatbot for guidance and earned First Prize at FESA 2K25 for its innovation and educational value.`,
+    tech: ['HTML', 'CSS', 'JavaScript', 'Dialogflow', 'Firebase'],
+    image: 'https://images.pexels.com/photos/1448561/pexels-photo-1448561.jpeg',
+    github: 'https://github.com/FrostByte-49/Zener_Diode_Simulation',
+    demo: 'https://zenersim.netlify.app/',
   },
+
+
   {
-    title: 'Task Management App',
-    description: 'Collaborative project management tool with real-time updates',
-    longDescription: 'Developed a collaborative task management application with real-time synchronization, drag-and-drop interface, team collaboration features, and progress tracking. Includes notifications and deadline reminders.',
-    tech: ['React', 'Firebase', 'Tailwind CSS'],
-    image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600',
-    github: '#',
-    demo: '#',
+    title: 'SymptoWise – AI Health Companion',
+    description: 'An AI-powered health companion offering personalized routines, nutrition, and symptom analysis.',
+    longDescription: `SymptoWise is an AI-powered health platform designed to act as a personal wellness assistant. It intelligently analyzes user symptoms using OpenAI’s API and provides tailored wellness routines, skincare guidance, and nutrition plans. With Firebase authentication and a sleek dark-mode UI, it combines physical and mental wellness support in one place. Developed as part of the Bolt Hackathon, the project demonstrated technical innovation and real-world usability.`,
+    tech: ['React (TypeScript)', 'TailwindCSS', 'Firebase', 'OpenAI API'],
+    image: 'https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg',
+    github: 'https://github.com/FrostByte-49/SymptoWise',
+    demo: 'https://symptowise.netlify.app/',
   },
+
   {
-    title: 'Weather Dashboard',
-    description: 'Beautiful weather app with forecasts and animations',
-    longDescription: 'Created an elegant weather dashboard that displays current conditions, 7-day forecasts, and interactive weather maps. Features beautiful animations that change based on weather conditions.',
-    tech: ['React', 'OpenWeather API', 'Chart.js'],
-    image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600',
-    github: '#',
-    demo: '#',
+    title: 'MindEaze – Mood Journal & Wellness Buddy',
+    description: 'An offline-first PWA for mood tracking, journaling, and mindfulness exercises.',
+    longDescription: `MindEaze is a privacy-focused, offline-first Progressive Web App designed to support mental wellness through daily mood tracking, guided journaling, breathing exercises, and calming music. It offers a smooth, distraction-free experience without requiring logins or internet connectivity. Recognized at LaunchHacks IV (15th place among 110 projects), it promotes mental well-being through intuitive and accessible digital self-care.`,
+    tech: ['React (TypeScript)', 'TailwindCSS', 'Vite', 'Chart.js', 'Web Audio API'],
+    image: 'https://images.pexels.com/photos/1325450/pexels-photo-1325450.jpeg',
+    github: 'https://github.com/FrostByte-49/MindEaze',
+    demo: 'https://mindeaze.netlify.app/',
   },
+
   {
-    title: 'Social Media Analytics',
-    description: 'Analytics dashboard for social media metrics',
-    longDescription: 'Built a comprehensive analytics dashboard that aggregates data from multiple social media platforms. Provides insights, trends, and actionable metrics with beautiful data visualizations.',
-    tech: ['Vue.js', 'D3.js', 'Express', 'PostgreSQL'],
-    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
-    github: '#',
+    title: 'Portfolio Website – Pranav Khalate',
+    description: 'A dynamic personal portfolio showcasing projects, experience, and achievements.',
+    longDescription: `A modern, fully responsive developer portfolio crafted to highlight projects, internships, open-source contributions, and personal achievements. Designed with a minimalist aesthetic and smooth animations, it offers an engaging browsing experience with sections like About, Projects, Experience, and Contact. Built with React, TypeScript, and TailwindCSS, the website reflects both technical proficiency and attention to design detail.`,
+    tech: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Lucide React'],
+    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+    github: 'https://github.com/FrostByte-49/Portfolio_',
     demo: '#',
   },
+
 ];
 
 export default function Projects() {
@@ -115,7 +120,7 @@ export default function Projects() {
 
         {selectedProject !== null && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm animate-fade-in">
-            <div className="bg-white/95 dark:bg-black/95 backdrop-blur-xl rounded-3xl max-w-3xl w-full max-h-[100vh] overflow-y-auto shadow-2xl border border-white/20 dark:border-white/10 animate-scale-in">
+            <div className="bg-white/95 dark:bg-black/95 backdrop-blur-xl rounded-3xl max-w-3xl w-full max-h-[110vh] overflow-y-auto shadow-2xl border border-white/20 dark:border-white/10 animate-scale-in scrollbar-thin scrollbar-thumb-rounded-full">
               <div className="relative">
                 <img
                   src={projectsData[selectedProject].image}
@@ -153,13 +158,18 @@ export default function Projects() {
                 <div className="flex gap-4">
                   <a
                     href={projectsData[selectedProject].github}
+                    target="_blank"
+                    rel="noreferrer noopener"
                     className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-full hover:scale-110 transition-all duration-300"
                   >
                     <Github className="w-5 h-5" />
                     View Code
                   </a>
+
                   <a
                     href={projectsData[selectedProject].demo}
+                    target="_blank"
+                    rel="noreferrer noopener"
                     className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full hover:scale-110 transition-all duration-300"
                   >
                     <ExternalLink className="w-5 h-5" />
