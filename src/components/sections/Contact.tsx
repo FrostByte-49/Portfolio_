@@ -79,20 +79,16 @@ export default function Contact() {
             </span>
           </div>
           
-          <h2 className="text-6xl font-bold mb-6 animate-glow">
-            <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-extrabold bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent drop- [0_0_10px_rgba(255,182,193,0.4)] uppercase">
               Contact
-            </span>
           </h2>
-          
+
+          {/* Line Animation */}
           <div className="flex justify-center items-center gap-4 mb-6">
             <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
-            <span className="text-lg text-pink-500 dark:text-purple-300 font-light">💌</span>
+            <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✦</span>
             <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
           </div>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your next project!
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
