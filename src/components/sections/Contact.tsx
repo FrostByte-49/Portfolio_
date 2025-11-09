@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Mail, Github, Linkedin, Send, CheckCircle, Sparkles, MapPin, Phone } from 'lucide-react';
 
 export default function Contact() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,6 +11,85 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Canvas Setup
+    const setCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight * 1.6;
+    };
+    setCanvasSize();
+
+    // Sakura Petals Configuration 
+    const petals = Array.from({ length: 60 }).map(() => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 8 + 4,
+      speedX: (Math.random() - 0.5) * 0.5,
+      speedY: Math.random() * 1 + 0.7,
+      rotation: Math.random() * Math.PI * 2,
+      rotationSpeed: (Math.random() - 0.5) * 0.02,
+      swing: Math.random() * Math.PI * 2,
+      amplitude: Math.random() * 1.5 + 0.5,
+      frequency: Math.random() * 0.01 + 0.005,
+      opacity: Math.random() * 0.5 + 0.5,
+    }));
+
+    const drawPetal = (p: any) => {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.globalAlpha = p.opacity;
+
+      const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, p.size);
+      gradient.addColorStop(0, 'rgba(255, 240, 245, 1)');
+      gradient.addColorStop(0.6, 'rgba(255, 182, 193, 0.8)');
+      gradient.addColorStop(1, 'rgba(255, 182, 193, 0.3)');
+      ctx.fillStyle = gradient;
+
+      // Sakura Shape (Heart-Like Petal)
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.bezierCurveTo(p.size / 2, -p.size / 2, p.size, p.size / 3, 0, p.size);
+      ctx.bezierCurveTo(-p.size, p.size / 3, -p.size / 2, -p.size / 2, 0, 0);
+      ctx.fill();
+
+      ctx.restore();
+    };
+
+    let animationId: number;
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      petals.forEach((p) => {
+        p.x += p.speedX + Math.sin(p.swing) * p.amplitude;
+        p.y += p.speedY;
+        p.rotation += p.rotationSpeed;
+        p.swing += p.frequency;
+
+        if (p.y > canvas.height + 20) {
+          p.y = -20;
+          p.x = Math.random() * canvas.width;
+        }
+
+        drawPetal(p);
+      });
+
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animate();
+    window.addEventListener('resize', setCanvasSize);
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener('resize', setCanvasSize);
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,7 +103,7 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // Replace with your actual key
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY',
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -52,7 +132,7 @@ export default function Contact() {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    setError(''); // Clear error when user starts typing
+    setError(''); // Clear Error When User Starts Typing
   };
 
   return (
@@ -62,6 +142,9 @@ export default function Contact() {
                  bg-gradient-to-br from-pink-50/80 via-white/80 to-purple-50/80 
                  dark:from-[#0a0f1f]/80 dark:via-[#1a1440]/80 dark:to-[#2b1e5a]/80"
     >
+      {/* Sakura Canvas */}
+      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-10 w-16 h-16 bg-pink-200/30 dark:bg-purple-500/20 rounded-full blur-xl animate-float" />
@@ -85,16 +168,16 @@ export default function Contact() {
 
           {/* Line Animation */}
           <div className="flex justify-center items-center gap-4 mb-6">
-            <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
-            <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✦</span>
-            <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
+              <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+              <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✦</span>
+              <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
           </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-2xl rounded-3xl p-6 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 transition-all duration-500">
+            <div className="bg-white/60 dark:bg-gray-800/60 rounded-3xl p-6 shadow-2xl border border-white/30 dark:border-white/10 hover:scale-105 transition-all duration-500">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">
                 Get In Touch
               </h3>
