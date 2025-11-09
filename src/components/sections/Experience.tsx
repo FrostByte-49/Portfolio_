@@ -3,57 +3,64 @@ import { useEffect, useRef, useState } from 'react';
 
 const experienceData = [
   {
-    role: 'Full Stack Developer Intern',
-    company: 'Tech Company A',
-    location: 'Remote',
-    period: 'Jun 2023 - Aug 2023',
-    description: 'Developed and maintained web applications using React and Node.js',
+    role: 'Open Source Contributor',
+    company: 'Code Social – Winter of Code Social (WoCS)',
+    location: 'Remote, India',
+    period: 'Nov 2025 - Present',
+    description:'Contributing to open-source projects under the Winter of Code Social (WoCS) program, focusing on improving existing codebases, enhancing documentation, and collaborating with mentors and fellow contributors.',
     achievements: [
-      'Built 5+ responsive web applications',
-      'Reduced page load time by 40%',
-      'Collaborated with a team of 8 developers',
+      'Actively participating in community-driven development',
+      'Contributing to feature improvements and issue resolution',
+      'Building hands-on experience with real-world open-source workflows',
     ],
-    certificate: 'https://drive.google.com/file/d/1BAFwjevn24EeCUL62dD442BNj_DRysS8/view?usp=sharing', 
+    certificate: 'https://drive.google.com/file/d/1cwbh_JfscMPYEMWhLlTuhzzQPQQySYb9/view?usp=sharing', 
   },
+  
   {
-    role: 'Frontend Developer Intern',
-    company: 'Startup B',
-    location: 'Mumbai, India',
-    period: 'Jan 2023 - May 2023',
-    description: 'Created engaging user interfaces and improved user experience',
+    role: 'Open Source Contributor',
+    company: 'GirlScript Summer of Code (GSSoC 2025)',
+    location: 'Remote, India',
+    period: 'Jul 2025 - Oct 2025',
+    description:
+      'Contributing to open-source projects under GSSoC ’25, collaborating with teams to build new features, fix bugs, and improve documentation across multiple repositories.',
     achievements: [
-      'Redesigned company website',
-      'Improved user engagement by 35%',
-      'Implemented modern UI/UX patterns',
+      'Enhanced project functionality through efficient code contributions',
+      'Actively participated in team discussions and community reviews',
+      'Gained hands-on experience in collaborative software development',
     ],
-    certificate: 'https://drive.google.com/file/d/1RjmAxq-nmO3pv5S3aBETnLXar_z8OzfD/view?usp=sharing', 
+    certificate: 'https://drive.google.com/file/d/1PoiJzlztRMA38VPjl3zARwu47qGvFBKq/view?usp=sharing',
   },
+  
   {
-    role: 'Backend Developer',
-    company: 'Tech Solutions Inc',
-    location: 'Bangalore, India',
-    period: 'Sep 2022 - Dec 2022',
-    description: 'Built scalable backend systems and RESTful APIs',
+    role: 'Web Development Intern',
+    company: 'SaiKet Systems',
+    location: 'Remote, India',
+    period: 'Jun 2025 - Jul 2025',
+    description:
+      'Completed a task-based virtual internship focused on front-end web development, creating responsive and user-friendly websites using modern tools and best practices.',
     achievements: [
-      'Developed 10+ microservices',
-      'Improved API response time by 60%',
-      'Implemented secure authentication system',
+      'Delivered 6+ functional front-end web projects with clean UI and optimized performance',
+      'Built interfaces using HTML, CSS, and JavaScript aligned with UX principles',
+      'Improved site responsiveness and accessibility across multiple devices',
     ],
-    certificate: 'https://drive.google.com/file/d/your-certificate-id-3/view', 
+    certificate: 'https://drive.google.com/file/d/1jF1qPnLXIGRbygkxXj0AcPFHH_DfbxFv/view?usp=sharing',
   },
+  
   {
-    role: 'UI/UX Design Intern',
-    company: 'Design Studio X',
-    location: 'Delhi, India',
-    period: 'Mar 2022 - Jun 2022',
-    description: 'Designed user interfaces and conducted user research',
+    role: 'Web Development Intern',
+    company: 'CipherByte Technologies',
+    location: 'Remote, India',
+    period: 'May 2025 - Jun 2025',
+    description:
+      'Gained hands-on experience in front-end web development through a structured, task-based internship program, focusing on design consistency and performance.',
     achievements: [
-      'Created 20+ design prototypes',
-      'Conducted user testing with 50+ participants',
-      'Improved conversion rates by 25%',
+      'Developed and deployed 4+ web applications using HTML, CSS, and JavaScript',
+      'Applied problem-solving and debugging skills to enhance UI performance',
+      'Implemented responsive layouts ensuring seamless cross-device compatibility',
     ],
-    certificate: 'https://drive.google.com/file/d/your-certificate-id-4/view', 
+    certificate: 'https://drive.google.com/file/d/1ViEZQ6WfbyQkRtE1sQQfIgu_MAJeGRSG/view?usp=sharing',
   },
+
 ];
 
 export default function Experience() { 
