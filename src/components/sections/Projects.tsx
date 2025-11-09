@@ -58,24 +58,24 @@ export default function Projects() {
 
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-16 animate-fade-in">
-        <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-full border border-pink-200 dark:border-purple-700 shadow-lg mb-5">
-          <Sparkles className="w-4 h-4 text-pink-500 dark:text-purple-400" />
-          <span className="text-sm font-medium text-pink-600 dark:text-purple-300 tracking-wide">
-            プロジェクト • My Creations
-          </span>
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-full border border-pink-200 dark:border-purple-700 shadow-lg mb-5">
+            <Sparkles className="w-4 h-4 text-pink-500 dark:text-purple-400" />
+            <span className="text-sm font-medium text-pink-600 dark:text-purple-300 tracking-wide">
+              プロジェクト • My Creations
+            </span>
+          </div>
+    
+          <h2 className="text-5xl font-extrabold bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent drop- [0_0_10px_rgba(255,182,193,0.4)] uppercase">
+            Projects
+          </h2>
+    
+          {/* Line Animation */}
+          <div className="flex justify-center items-center gap-4 mb-6">
+            <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+            <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✦</span>
+            <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
+          </div>
         </div>
-
-        <h2 className="text-5xl font-extrabold bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent drop- [0_0_10px_rgba(255,182,193,0.4)] uppercase">
-          Projects
-        </h2>
-
-        {/* Line Animation */}
-        <div className="flex justify-center items-center gap-4 mb-6">
-          <div className="h-1 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
-          <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✦</span>
-          <div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
-        </div>
-      </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {projectsData.map((project, index) => (
@@ -180,6 +180,18 @@ export default function Projects() {
             </div>
           </div>
         )}
+
+        {/* Footer Text */}
+        <div className="text-center mt-16 animate-fade-in animation-delay-600">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-full border border-pink-200/50 dark:border-purple-700/50">
+            <Sparkles className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
+            <p className="text-lg font-medium text-gray-700 dark:text-gray-300 capitalize">
+              Learning endlessly. Building fearlessly.
+            </p>
+            <Sparkles className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
+          </div>
+        </div>
+        
       </div>
     </section>
   );

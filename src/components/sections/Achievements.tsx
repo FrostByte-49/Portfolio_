@@ -3,58 +3,64 @@ import { useEffect, useRef, useState } from 'react';
 
 const achievementsData = [
   {
-    title: 'Hackathon Winner',
-    event: 'National Tech Hackathon 2023',
-    description: 'First place among 500+ participants for building an innovative AI solution',
+    title: 'National Level Qualifier',
+    event: 'Srinivasa Ramanujan Mathematical Competition',
+    description: 'Qualified for the National Level (Level 3) after excelling in State and Chapter rounds. Recognized for strong analytical reasoning, numerical aptitude, and advanced problem-solving proficiency in mathematics.',
+    icon: Award,
+    color: 'from-indigo-400 to-blue-500',
+    certificate: 'https://drive.google.com/file/d/1Lt1Qv0Vhs-HCx-ukUn_I-RS-W70fNOoF/view?usp=sharing',
+  },
+
+  {
+    title: 'Winner – Physics Exhibition',
+    event: 'Eureka 2025 (FESA Annual Tech Fest)',
+    description: 'Secured First Place for the “Zener Diode Virtual Lab”, recognized for innovation, technical depth, and educational impact in electronics simulation. The project stood out for its interactivity, real-time computation, and user-friendly design.',
     icon: Trophy,
     color: 'from-yellow-400 to-orange-500',
-    certificate: 'https://drive.google.com/file/d/hackathon-certificate/view',
+    certificate: 'https://drive.google.com/file/d/1YXt0zDiTqhkfacbUQYz8ONyKAFZHPVTy/view?usp=sharing',
   },
+
   {
-    title: 'Google Cloud Certified',
-    event: 'Professional Cloud Architect',
-    description: 'Achieved certification in designing and managing cloud solutions',
-    icon: Award,
-    color: 'from-blue-400 to-cyan-500',
-    certificate: 'https://drive.google.com/file/d/google-cloud-certificate/view',
+    title: 'Winner – Code Conquer',
+    event: 'Eureka 2025 (FESA Annual Tech Fest)',
+    description: 'Champion of the competitive coding contest, showcasing exceptional problem-solving, speed, and algorithmic precision under timed conditions. Ranked first among top-performing participants across multiple rounds.',
+    icon: Trophy,
+    color: 'from-pink-400 to-rose-500',
+    certificate: 'https://drive.google.com/file/d/1_svalAtephrth3PWHQZ5o8vozisUD0Is/view?usp=sharing',
   },
+  
   {
-    title: 'Open Source Contributor',
-    event: 'GitHub Achievements',
-    description: 'Contributed to 20+ open source projects with 500+ stars',
-    icon: Star,
-    color: 'from-purple-400 to-pink-500',
-    certificate: 'https://drive.google.com/file/d/opensource-certificate/view',
-  },
-  {
-    title: 'Best Project Award',
-    event: 'University Tech Fest 2023',
-    description: 'Recognized for outstanding final year project presentation',
+    title: 'Aspire Leaders Program',
+    event: 'Aspire Institute',
+    description: 'Selected for the global Aspire Leaders Program, focused on leadership development, critical thinking, and driving meaningful social impact through innovative initiatives.',
     icon: Award,
     color: 'from-green-400 to-emerald-500',
-    certificate: 'https://drive.google.com/file/d/project-award-certificate/view',
+    certificate: 'https://drive.google.com/file/d/1Gw8A7t8IIGAdeHNONvqwYSv644FQPf2w/view?usp=sharing',
   },
+
   {
-    title: 'Coding Competition Winner',
-    event: 'CodeChef Contest',
-    description: 'Secured top position in monthly coding challenge',
-    icon: Trophy,
-    color: 'from-red-400 to-pink-500',
-    certificate: 'https://drive.google.com/file/d/coding-certificate/view',
+    title: 'Ethics of AI',
+    event: 'University of Helsinki',
+    description: 'Earned certification in “Ethics of AI” from the University of Helsinki, exploring responsible AI development, fairness, and the moral implications of emerging technologies.',
+    icon: Star,
+    color: 'from-purple-400 to-pink-500',
+    certificate: 'https://drive.google.com/file/d/1TM0egQXU8mTX5jgiR5ihExAqk8o2IRm3/view?usp=sharing',
   },
+
   {
-    title: 'AWS Certified Developer',
-    event: 'Amazon Web Services',
-    description: 'Professional certification in AWS cloud development',
-    icon: Award,
-    color: 'from-orange-400 to-amber-500',
-    certificate: 'https://drive.google.com/file/d/aws-certificate/view',
+    title: 'Open Source Contributor',
+    event: 'GirlScript Summer of Code',
+    description: 'Contributed to open-source projects during GirlScript Summer of Code, enhancing real-world collaboration, code quality, and community-driven development practices.',
+    icon: Star,
+    color: 'from-purple-400 to-pink-500',
+    certificate: 'https://drive.google.com/file/d/1PoiJzlztRMA38VPjl3zARwu47qGvFBKq/view?usp=sharing',
   },
+
 ];
 
-export default function Achievements() { // Changed from Hero to Achievements
+export default function Achievements() { 
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null); // Added useState
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null); 
 
   const openCertificate = (certificateUrl: string) => {
     setSelectedCertificate(certificateUrl);
