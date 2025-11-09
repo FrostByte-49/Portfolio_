@@ -242,11 +242,11 @@ export default function Achievements() {
           {/* Footer Text */}
           <div className="text-center mt-16 animate-fade-in animation-delay-600">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-full border border-pink-200/50 dark:border-purple-700/50">
-              <Star className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
-              <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
-                Celebrating milestones and continuous growth
+              <Sparkles className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
+              <p className="text-lg font-medium text-gray-700 dark:text-gray-300 capitalize">
+                Celebrating milestones & fueling continuous growth  
               </p>
-              <Star className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
+              <Sparkles className="w-5 h-5 text-pink-500 dark:text-purple-400 animate-pulse" />
             </div>
           </div>
         </div>

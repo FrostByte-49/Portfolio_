@@ -38,7 +38,7 @@ const projectsData = [
     description: 'A dynamic personal portfolio showcasing projects, experience, and achievements.',
     longDescription: `A modern, fully responsive developer portfolio crafted to highlight projects, internships, open-source contributions, and personal achievements. Designed with a minimalist aesthetic and smooth animations, it offers an engaging browsing experience with sections like About, Projects, Experience, and Contact. Built with React, TypeScript, and TailwindCSS, the website reflects both technical proficiency and attention to design detail.`,
     tech: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Lucide React'],
-    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://res.cloudinary.com/dhn92qb61/image/upload/v1762707726/Screenshot_2025-11-09_222709_ykpr3m.png',
     github: 'https://github.com/FrostByte-49/Portfolio_',
     demo: '#',
   },

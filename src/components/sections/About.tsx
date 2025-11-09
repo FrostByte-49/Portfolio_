@@ -1,6 +1,6 @@
 import { Sparkles } from 'lucide-react';
 import { useEffect, useRef } from 'react';
-import profileImage from '../../assets/images/Me_.webp';
+import profileImage from '../../../public/assets/images/Me_.webp';
 
 export default function About() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

@@ -208,7 +208,7 @@ export default function Experience() {
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   {/* Timeline Node */}
-                  <div className="absolute left-2 top-32 w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center shadow-2xl shadow-purple-500/50 z-20 animate-pulse">
+                  <div className="absolute left-2 top-32 w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center shadow-2xl shadow-purple-500/50 z-20">
                     <Briefcase className="w-4 h-4 text-white" />
                   </div>
 

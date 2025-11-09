@@ -103,7 +103,7 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY',
+          access_key: '5b46ad18-3413-4535-bb8d-95e6db52e6d8',
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -139,8 +139,8 @@ export default function Contact() {
     <section
       id="contact"
       className="min-h-screen flex items-center justify-center relative overflow-hidden px-6 py-20 transition-colors duration-500
-                 bg-gradient-to-br from-pink-50/80 via-white/80 to-purple-50/80 
-                 dark:from-[#0a0f1f]/80 dark:via-[#1a1440]/80 dark:to-[#2b1e5a]/80"
+                 bg-gradient-to-br from-pink-100 via-white to-purple-100 
+                 dark:from-[#0a0f1f] dark:via-[#1a1440] dark:to-[#2b1e5a]"
     >
       {/* Sakura Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
@@ -189,7 +189,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-800 dark:text-white">pranav@example.com</p>
+                    <p className="font-semibold text-gray-800 dark:text-white">pranav.kh25@gmail.com</p>
                   </div>
                 </div>
 
@@ -199,7 +199,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Phone</p>
-                    <p className="font-semibold text-gray-800 dark:text-white">+1 (555) 123-4567</p>
+                    <p className="font-semibold text-gray-800 dark:text-white">–</p>
                   </div>
                 </div>
 
@@ -217,13 +217,13 @@ export default function Contact() {
               {/* Social Links */}
               <div className="flex justify-center gap-4 mt-6 pt-6 border-t border-white/30 dark:border-white/10">
                 <a
-                  href="mailto:pranav@example.com"
+                  href="mailto:pranav.kh25@gmail.com"
                   className="p-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full hover:scale-110 transition-all duration-300 shadow-lg group"
                 >
                   <Mail className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" />
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/FrostByte-49"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full hover:scale-110 transition-all duration-300 shadow-lg group"
@@ -231,7 +231,7 @@ export default function Contact() {
                   <Github className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/pranav-kh/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full hover:scale-110 transition-all duration-300 shadow-lg group"

@@ -112,7 +112,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-light mt-2">
-            フルスタック開発者 • Full Stack Developer
+            ウェブ開発者 • Web Developer
           </p>
         </div>
 
@@ -124,9 +124,9 @@ export default function Hero() {
         </div>
         
         {/* Tagline */}
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-6 leading-relaxed animate-slide-up">
-          Building immersive, modern, and meaningful digital experiences 
-          with clean code and creative design — blending technology with art.
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-6 leading-relaxed animate-slide-up capitalize">
+          Building immersive, modern & meaningful digital experiences 
+          with clean code & creative design – blending technology with art...
         </p>
 
         {/* Buttons */}
@@ -156,13 +156,15 @@ export default function Hero() {
         {/* Socials */}
         <div className="flex justify-center gap-6 mt-10 animate-fade-in animation-delay-400">
           {[
-            { icon: Github, href: '#', label: 'GitHub' },
-            { icon: Linkedin, href: '#', label: 'LinkedIn' },
-            { icon: Mail, href: '#', label: 'Email' },
+            { icon: Github, href: 'https://github.com/FrostByte-49', label: 'GitHub' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/pranav-kh/', label: 'LinkedIn' },
+            { icon: Mail, href: 'mailto:pranav.kh25@gmail.com', label: 'Email' },
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}
               href={href}
+              target="_blank"
+              rel="noreferrer noopener"
               className="group p-3 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-pink-200/30 dark:border-purple-700/30 rounded-full shadow-md hover:shadow-xl transform hover:scale-110 hover:bg-pink-50 dark:hover:bg-purple-900/30 transition-all duration-300"
               aria-label={label}
             >

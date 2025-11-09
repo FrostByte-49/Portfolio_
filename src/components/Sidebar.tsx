@@ -39,7 +39,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
   return (
     <aside
       className="fixed left-0 top-0 h-full w-72 bg-white/30 dark:bg-[#0d0b1e]/40 
-                 backdrop-blur-2xl border-r border-white/20 dark:border-white/10 
+                 backdrop-blur-2xl border-r border-gray-400 dark:border-white/10 
                  shadow-[0_0_25px_rgba(255,182,193,0.2)] z-40 hidden lg:flex flex-col"
                  
     >
@@ -47,9 +47,16 @@ export default function Sidebar({ activeSection }: SidebarProps) {
       <div className="py-8 text-center relative">
         <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-blue-400/20 blur-3xl rounded-full animate-pulse" />
         <h2 className="relative text-3xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent tracking-wide drop-shadow-sm">
-          PK Portfolio
+          プラナヴ・カラテ
         </h2>
-        <div className="mt-2 mb-2 h-[2px] w-16 mx-auto bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+
+        {/* Line Animation */}
+        <div className="flex justify-center items-center gap-4 mt-2 mb-[-10px]">
+            <div className="h-0.5 w-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+            <span className="text-lg text-pink-500 dark:text-purple-300 font-light">✦</span>
+            <div className="h-0.5 w-20 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse animation-delay-500" />
+        </div>
+
       </div>
 
       {/* Navigation */}
@@ -91,10 +98,10 @@ export default function Sidebar({ activeSection }: SidebarProps) {
       </nav>
 
       {/* Footer Section */}
-      <div className="py-6 text-center text-s text-gray-600 dark:text-gray-400 border-t border-white/10">
+      <div className="py-4 text-center text-s text-gray-600 dark:text-gray-400 border-t border-gray-400">
         <p>© 2025 Pranav Khalate</p>
         <p className="text-[1rem] text-pink-400 mt-1 tracking-wide">
-          Crafted with 💖 & React
+          Crafted with 💖
         </p>
       </div>
     </aside>
