@@ -3,35 +3,36 @@ import { X, Maximize2, Sparkles } from 'lucide-react';
 
 const galleryImages = [
   {
-    url: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600',
-    title: 'Creative Design',
+    url: 'https://res.cloudinary.com/dhn92qb61/image/upload/v1762957983/Screenshot_2025-11-12_191534_czdjry.png',
+    title: 'GitHub Profile',
+    category: 'Code',
+  },
+
+  {
+    url: 'https://res.cloudinary.com/dhn92qb61/image/upload/v1762957954/Screenshot_2025-11-12_190232_pu8eb3.png',
+    title: 'LinkedIn Profile',
+    category: 'Network',
+  },
+
+  {
+    url: 'https://res.cloudinary.com/dhn92qb61/image/upload/v1762957982/Screenshot_2025-11-12_191415_fw1eo7.png',
+    title: 'Project Analytics',
+    category: 'Project',
+  },
+
+  {
+    url: 'https://res.cloudinary.com/dhn92qb61/image/upload/v1762957921/cover1_xqzedh.png',
+    title: 'My Portfolio',
     category: 'Design',
   },
+
   {
-    url: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600',
-    title: 'Code & Coffee',
-    category: 'Workspace',
-  },
-  {
-    url: 'https://images.pexels.com/photos/1181243/pexels-photo-1181243.jpeg?auto=compress&cs=tinysrgb&w=600',
-    title: 'Tech Setup',
+    url: 'https://res.cloudinary.com/dhn92qb61/image/upload/v1762957912/20251112_193613_hlcpzm.jpg',
+    title: 'Coding Workspace',
     category: 'Tech',
   },
-  {
-    url: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600',
-    title: 'Team Collaboration',
-    category: 'Work',
-  },
-  {
-    url: 'https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg?auto=compress&cs=tinysrgb&w=600',
-    title: 'Innovation',
-    category: 'Tech',
-  },
-  {
-    url: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=600',
-    title: 'Creative Process',
-    category: 'Design',
-  },
+
+
 ];
 
 export default function Gallery() {
@@ -71,7 +72,7 @@ export default function Gallery() {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="group relative aspect-square overflow-hidden rounded-2xl cursor-pointer animate-slide-up"
+              className="group relative aspect-square overflow-hidden rounded-2xl border-4 border-gray-400 cursor-pointer animate-slide-up hover:border-pink-500 transition-colors duration-300"
               style={{ animationDelay: `${index * 50}ms` }}
               onClick={() => setSelectedImage(index)}
             >
