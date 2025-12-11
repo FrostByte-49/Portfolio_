@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ReactGA from 'react-ga4';
+import { Analytics } from '@vercel/analytics/react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Hero from './components/sections/Hero';
@@ -44,25 +45,74 @@ function App() {
     }
   }, [isDark, mounted]);
 
+  // Smooth Scrolling
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'education', 'experience', 'projects', 'skills', 'achievements', 'gallery', 'testimonials', 'contact'];
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveSection(section);
-            // Track pageview on section change
-            ReactGA.send({ hitType: 'pageview', page: `#${section}` });
-            break;
-          }
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    const handleSmoothScroll = (e: Event) => {
+      e.preventDefault();
+      const target = e.target as HTMLAnchorElement;
+      const targetId = target.getAttribute('href');
+      
+      if (targetId && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    // Click Event Listeners For Anchor Links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', handleSmoothScroll as EventListener);
+    });
+
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+      anchorLinks.forEach(link => {
+        link.removeEventListener('click', handleSmoothScroll as EventListener);
+      });
+    };
+  }, []);
+
+  useEffect(() => {
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const sections = ['home', 'about', 'education', 'experience', 'projects', 'skills', 'achievements', 'gallery', 'testimonials', 'contact'];
+          const scrollPosition = window.scrollY + 150; 
+
+          for (const section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+              const offsetTop = element.offsetTop;
+              const offsetHeight = element.offsetHeight;
+              
+              if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                setActiveSection(section);
+                ReactGA.send({ hitType: 'pageview', page: `#${section}` });
+                break;
+              }
+            }
+          }
+          
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial Check
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -80,6 +130,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-blue-100 to-purple-100 dark:from-slate-900 dark:via-purple-900 dark:to-indigo-950 transition-colors duration-700">
       <ParticleBackground isDark={isDark} />
+      <Analytics />
 
       <Header isDark={isDark} setIsDark={setIsDark} />
       <Sidebar activeSection={activeSection} />
